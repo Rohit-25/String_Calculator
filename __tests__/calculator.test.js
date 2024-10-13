@@ -15,3 +15,7 @@ test('should return 6 for  "1,5" input', () => {
 test('should return 19 for "1,3,4,5,6" ', () => {
   expect(add("1,3,4,5,6")).toBe(19);
 });
+
+test('should handle new lines between numbers', () => {
+  expect(add("1\n2,3")).toBe(6);
+});

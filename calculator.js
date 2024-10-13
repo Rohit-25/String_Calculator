@@ -9,10 +9,16 @@ function add(numbers){
       delimiter = new RegExp(matchDelimeters[1]);
       // console.log(numbers)
       numbers= numbers.split("\n")[1]
-      console.log(numbers)
+      // console.log(numbers)
     }
     
-    const numArray = numbers.split(delimiter);
+    const numArray = numbers.split(delimiter).map(num=>parseInt(num));
+    const negativeNumbers = numArray.filter(num=>num<0)
+    // console.log(negativeNumbers)
+    
+    if(negativeNumbers.length>0){
+      throw new Error(`Negative numbers not allowed: ${negativeNumbers.join(', ')}`)
+    }
     const ans = numArray.reduce((sum,num)=>sum + parseInt(num),0)
     return ans
     

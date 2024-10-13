@@ -1,5 +1,10 @@
 function add(numbers){
-    return 0;
+    if(!numbers) return 0;
+    
+    const numArray = numbers.split(',')
+    const ans = numArray.reduce((sum,num)=>sum + parseInt(num),0)
+    return ans
+    
 }
 
 module.exports=add

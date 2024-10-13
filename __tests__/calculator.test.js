@@ -27,3 +27,7 @@ test('should support different delimiters', () => {
 test('should throw an error for negative numbers', () => {
   expect(() => add("1,-2,3")).toThrow("Negative numbers not allowed: -2");
 });
+
+ test('should return 0 if input contains just a delimiter and no numbers', () => {
+    expect(add("//;\n;")).toBe(0);
+  });

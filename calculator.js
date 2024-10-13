@@ -12,7 +12,7 @@ function add(numbers){
       // console.log(numbers)
     }
     
-    const numArray = numbers.split(delimiter).map(num=>parseInt(num));
+    const numArray = numbers.split(delimiter).map(num=> (num ? parseInt(num) : 0));
     const negativeNumbers = numArray.filter(num=>num<0)
     // console.log(negativeNumbers)
     
